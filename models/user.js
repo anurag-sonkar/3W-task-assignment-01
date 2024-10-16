@@ -6,11 +6,11 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        socialMediaHandle:{
+        socialMediaHandles:{
             type: [String],
             required : true
         },
-        images:[
+        attachments:[
             {
                 public_id:{type:String , required:true},
                 url : {type : String,  required: true}
