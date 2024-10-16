@@ -9,6 +9,8 @@ const userRoutes = require('./routes/user')
 
 // middleware
 app.use(cors());
+app.use(express.json())
+
 
 // routes
 // currently not handling authentication and authorization 
