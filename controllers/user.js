@@ -1,10 +1,9 @@
-const { response } = require('express')
 const { uploadAttachmentsToCloudinary } = require('../middleware/upload')
 const User = require('../models/user')
 // returning only true 
 const handleFormSubmit = async (req, res) => {
-    console.log("body",req.body)
-    console.log("files",req.files)
+    // console.log("body",req.body)
+    // console.log("files",req.files)
     const { name, socialMediaHandles } = req.body
     if (!name) return res.status(400).json({ message: "name is required" })
     if (!socialMediaHandles) return res.status(400).json({ message: "atleast one social-media-handle is required" })
