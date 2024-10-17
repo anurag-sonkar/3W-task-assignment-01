@@ -1,3 +1,4 @@
+const { response } = require('express')
 const { uploadAttachmentsToCloudinary } = require('../middleware/upload')
 const User = require('../models/user')
 // returning only true 
@@ -40,13 +41,24 @@ const handleFormSubmit = async (req, res) => {
 
         })
 
-        return res.status(201).send({message:"saved successfully"})
+        return res.status(201).json({message:"saved successfully"},user)
 
     } catch (error) {
         return res.status(400).json({ message: error.message })
     }
-
-
+    
+    
 }
 
-module.exports = { handleFormSubmit }
+const handleGetAllUsers = async(req,res)=>{
+    try {
+        const users = await User.find()
+        return res.status(200).json(users)
+    } catch (error) {
+        return res.status(400).json({ message: error.message })
+
+        
+    }
+}
+
+module.exports = { handleFormSubmit, handleGetAllUsers }
