@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const cors = require('cors')
 const PORT = process.env.PORT || 5000;
+const BASE_URL = process.env.BASE_URL
 const userRoutes = require('./routes/user')
 
 // middleware
@@ -18,4 +19,5 @@ app.use(express.json())
 app.use('/user', userRoutes) 
 
 // listening PORT
-app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
+// app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server started at ${BASE_URL}:${PORT}`));
