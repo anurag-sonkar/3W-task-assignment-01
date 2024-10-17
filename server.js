@@ -9,7 +9,10 @@ const BASE_URL = process.env.BASE_URL
 const userRoutes = require('./routes/user')
 
 // middleware
-app.use(cors());
+app.use(cors({
+    origin: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+}));
 app.use(express.json())
 
 
