@@ -10,10 +10,8 @@ const userRoutes = require('./routes/user')
 
 // middleware
 app.use(cors({
-    origin: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
-    credentials: true, // for cookie (currenlty not require)
+    origin: '*',
+    methods: ['GET', 'POST'], //  OPTIONS
 }));
 
 app.use(express.json())
